@@ -3,7 +3,8 @@ let btn=document.querySelector(".addlist");
 let list=document.querySelector(".list");
 let listitem=document.querySelectorAll(".list li");
 let listitemspan=document.querySelectorAll(".list li span");
-
+let uparrow=document.querySelector(".uparrow");
+let downarrow=document.querySelector(".downarrow");
 let listtoto=[];
 
 window.onload=()=>{
@@ -25,6 +26,7 @@ let createelement=function(valueadd){
     // updatelist();
     addevent(newelement,newelement1);
     console.log(listtoto);
+    scrolldown();
 }
 
 let addelement=function(){
@@ -72,3 +74,37 @@ let addevent=function(li ,lis){
 }
 
 // updatelist();
+
+//Scrolling
+//scroll down
+let scrolldown=function(){
+    list.scrollTop=list.scrollHeight;
+    // console.log(list.scrollHeight);
+    // uparrow.style.dispaly="block";
+}
+//scroll up
+let scrollup=function(){
+    list.scrollTop=0;
+    // downarrow.style.dispaly="block";
+}
+
+let displayscrollarrow=function(){
+    console.log(list.scrollTop,list.scrollHeight);
+    if(list.scrollTop==0){
+        downarrow.style.display="block";
+        uparrow.style.display="none";
+    }
+    // else if(list.scrollTop==list.scrollHeight)
+    // {
+    //     downarrow.style.display="none";
+    //     uparrow.style.display="block";
+    // }
+    else{
+        downarrow.style.display="none";
+        uparrow.style.display="block";
+    }
+}
+
+uparrow.addEventListener("click",scrollup);
+downarrow.addEventListener("click",scrolldown);
+list.addEventListener("scroll",displayscrollarrow);

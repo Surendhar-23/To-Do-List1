@@ -3,6 +3,7 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -20,7 +21,8 @@ section{
     padding: 40px 40px;
     border-radius: 10px;
     box-shadow: 0px 0px 50px rgba(0,0,0,0.3);
-
+    margin: 0 5px;
+    position: relative;
 }
 
 .container .head-text {
@@ -33,11 +35,10 @@ section{
 }
 .container .head-text h2{
     font-weight: 500;
-
-    font-size: 32px;
+    font-size: 2rem;
 }
 .container .head-text img{
-    width: 42px;
+    width: 2rem;
   
 }
 .input{
@@ -85,6 +86,7 @@ section{
     padding-right: 30px;
     overflow: auto;
     max-height: 200px;
+    scroll-behavior: smooth;
 }
 
 .list li{
@@ -136,4 +138,19 @@ section{
 
 .list li span:hover{
     background-color: #bbb;
+}
+
+.arrow{
+    width: 24px;
+    height: 24px;
+    right: 3.5rem;
+    border: 0;
+    /* background-color: #920909; */
+    z-index: 100;
+    position: absolute;
+    border-radius: 50%;
+    padding: 4px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.174);
+    display: none;
+    cursor: pointer;
 }
